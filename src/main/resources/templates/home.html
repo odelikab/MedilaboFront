@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="utf-8"/>
+<title>Patient List</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	
+	<div class="row"><h2>Patient List</h2></div>
+	<div class="row">
+		<!--
+		<a href="/patient/add" class="btn btn-primary btn-sm">Add New</a>  -->
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<!--<th>Id</th>-->
+					<th>Nom</th>
+					<th>Prénom</th>
+					<th>Genre</th>
+					<th>Date de naissance</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="patient : ${patients}">
+					<!--<td style="width: 10%" th:text="${patient.id}"></td>-->
+					<td th:text="${patient.nom}"></td>
+					<td th:text="${patient.prenom}"></td>
+					<td th:text="${patient.genre}"></td>
+					<td th:text="${patient.date_de_naissance}"></td>
+					<!--
+					<td style="width: 15%" class="text-center">
+						<a th:href="@{/patient/update/{id}(id=${patient.id})}">Edit</a>&nbsp;|&nbsp;
+						<a th:href="@{/patient/delete/{id}(id=${patient.id})}">Delete</a>
+					</td>
+					-->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

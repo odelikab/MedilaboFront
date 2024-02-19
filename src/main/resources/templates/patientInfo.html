@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="utf-8"/>
+<title>Patient info</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+	
+	<div class="row"><h2>Patient info</h2></div>
+	<div class="row">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nom</th>
+					<th>Prenom</th>
+					<th>Genre</th>
+					<th>Date de naissance</th>
+					<th>Note</th>	
+					<th>Diabetes Assessment</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="note : ${notes}">
+					<td style="width: 10%" th:text="${note.patId}"></td>
+					<td th:text="${note.patient}"></td>
+					<td th:text="${patient.nom}"></td>
+					<td th:text="${patient.genre}"></td>
+					<td th:text="${patient.date_de_naissance}"></td>
+					<td th:text="${note.note}"></td>
+					<td th:text="${diag}"></td>
+									<!--	
+					<td style="width: 15%" class="text-center">
+						<a th:href="@{/home/notes/{id}(id=${note.patId})}">Edit</a>&nbsp;|&nbsp;
+						<a th:href="@{/home/notes/{id}(id=${note.patId})}">Delete</a>
+					</td>
+					-->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>
