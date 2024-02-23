@@ -39,6 +39,14 @@ public class HomeController {
 		return "home";
 	}
 
+	@GetMapping("/patient/{id}")
+	public String patientInfo(@PathVariable("id") Integer id, Model model) {
+
+		PatientBean patient = patientProxy.getPatientInfo(id);
+		model.addAttribute("patient", patient);
+		return "patientInfo";
+	}
+
 	@GetMapping("/home/notes")
 	public String homeNotes(Model model) {
 		List<NoteBean> notes = noteProxy.getNotes();
@@ -57,5 +65,4 @@ public class HomeController {
 		model.addAttribute("diag", risque);
 		return "patientInfo";
 	}
-
 }

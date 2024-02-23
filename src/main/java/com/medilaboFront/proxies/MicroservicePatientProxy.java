@@ -15,6 +15,9 @@ public interface MicroservicePatientProxy {
 	@GetMapping(value = "/patients/list")
 	List<PatientBean> listeDesPatients();
 
+	@GetMapping(value = "/patients/{id}")
+	PatientBean getPatientInfo(@PathVariable("id") Integer id);
+
 	@GetMapping(value = "/patients/nom/{nom}")
 	Optional<PatientBean> getPatient(@PathVariable("nom") String nom);
 

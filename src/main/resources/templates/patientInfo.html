@@ -9,12 +9,12 @@
 <body>
 <div class="container">
 	
-	<div class="row"><h2>Patient info</h2></div>
+	<div class="row"><h2>Info Patient</h2></div>
 	<div class="row">
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>Id</th>
+					
 					<th>Nom</th>
 					<th>Prenom</th>
 					<th>Genre</th>
@@ -25,14 +25,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="note : ${notes}">
-					<td style="width: 10%" th:text="${note.patId}"></td>
-					<td th:text="${note.patient}"></td>
+				<tr> <!--</tr> th:each="note : ${notes}">-->
+					<!--<td style="width: 10%" th:text="${notes.patId}"></td>
+					<td th:text="${note.patient}"></td>-->
 					<td th:text="${patient.nom}"></td>
+					<td th:text="${patient.prenom}"></td>
 					<td th:text="${patient.genre}"></td>
 					<td th:text="${patient.date_de_naissance}"></td>
-					<td th:text="${note.note}"></td>
-					<td th:text="${diag}"></td>
+					<td th:text="${patient.numero_telephone}"></td>
+					<td th:text="${patient.adresse_postale}"></td>
+					<!--<td th:text="${note.note}"></td>
+					<td th:text="${diag}"></td>-->
 									<!--	
 					<td style="width: 15%" class="text-center">
 						<a th:href="@{/home/notes/{id}(id=${note.patId})}">Edit</a>&nbsp;|&nbsp;
