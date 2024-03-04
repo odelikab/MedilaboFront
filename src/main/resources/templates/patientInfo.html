@@ -16,10 +16,11 @@
 				<tr>
 					
 					<th>Nom</th>
-					<th>Prenom</th>
+					<th>Prénom</th>
 					<th>Genre</th>
 					<th>Date de naissance</th>
-					<th>Note</th>	
+					<th>Numéro de téléphone</th>
+					<th>Adresse</th>
 					<th>Diabetes Assessment</th>
 
 				</tr>
@@ -34,14 +35,21 @@
 					<td th:text="${patient.date_de_naissance}"></td>
 					<td th:text="${patient.numero_telephone}"></td>
 					<td th:text="${patient.adresse_postale}"></td>
-					<!--<td th:text="${note.note}"></td>
-					<td th:text="${diag}"></td>-->
-									<!--	
+					<td th:text="${diag}"></td>
+					<!--<td th:each="note : ${notes}" th:text="${note.note}"></td>
+					
+										
 					<td style="width: 15%" class="text-center">
 						<a th:href="@{/home/notes/{id}(id=${note.patId})}">Edit</a>&nbsp;|&nbsp;
 						<a th:href="@{/home/notes/{id}(id=${note.patId})}">Delete</a>
 					</td>
 					-->
+				</tr>
+				<tr>
+					<th>Notes</th>
+				</tr>
+				<tr th:each="note : ${notes}">
+					<td th:text="${note.note}"></td>
 				</tr>
 			</tbody>
 		</table>

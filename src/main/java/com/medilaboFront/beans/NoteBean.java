@@ -8,6 +8,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 public class NoteBean {
+//	private String id;
 	private Integer patId;
 	private String patient;
 	private String note;

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.medilaboFront.beans.NoteBean;
 
-@FeignClient(name = "medilaboNote", url = "localhost:8080")
+@FeignClient(name = "medilaboNote", url = "localhost:8083")
 
 public interface MicroserviceNoteProxy {
 

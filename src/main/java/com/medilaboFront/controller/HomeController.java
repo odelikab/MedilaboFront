@@ -43,7 +43,11 @@ public class HomeController {
 	public String patientInfo(@PathVariable("id") Integer id, Model model) {
 
 		PatientBean patient = patientProxy.getPatientInfo(id);
+		List<NoteBean> notesPatient = noteProxy.getPatientNotes(id);
+		String diag = diagProxy.getRisqueById(id);
 		model.addAttribute("patient", patient);
+		model.addAttribute("diag", diag);
+		model.addAttribute("notes", notesPatient);
 		return "patientInfo";
 	}
 
